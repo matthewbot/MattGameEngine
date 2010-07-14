@@ -1,0 +1,9 @@
+project MattGameEngine
+	: requirements <include>. <source>/site-config//boost
+	: build-dir build
+	;
+
+path-constant DIST : dist ; 
+
+build-project MGE ;
+build-project MGETest ;

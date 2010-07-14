@@ -1,0 +1,7 @@
+project MattGameEngine/MGETest 
+	: requirements <library>/MattGameEngine/MGE//mge ;
+
+install env : [ glob env/* : env/.svn ] : <location>$(DIST) ;
+
+exe mgetest : [ glob-tree *.cpp : .svn ] ;
+install dist : mgetest : <location>$(DIST) ;

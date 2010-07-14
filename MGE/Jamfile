@@ -1,0 +1,4 @@
+project MattGameEngine/MGE
+	: requirements <source>/site-config//sdl <source>/site-config//png <source>/site-config//gl <source>/site-config//glew <source>/site-config//openal <source>/site-config//vorbisfile <source>/site-config//enet <source>/site-config//physfs ;
+
+lib mge : [ glob-tree *.cpp : .svn ] : <link>static : : <include>.. ;
