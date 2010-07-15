@@ -8,8 +8,7 @@
 #include <boost/scoped_array.hpp>
 #include <boost/scoped_ptr.hpp>
 #include <SDL/SDL.h>
-#include <SDL/SDL_opengl.h>
-#include <GL/gl.h>
+#include <GL/glew.h>
 
 using namespace std;
 using namespace mge;

@@ -9,8 +9,6 @@
 #include <MGE/util/Exception.h>
 #include <MGE/util/Logger.h>
 #include <GL/glew.h>
-#include <SDL/SDL_opengl.h>
-#include <GL/gl.h>
 #include <algorithm>
 #include <sstream>
 #include <iostream>

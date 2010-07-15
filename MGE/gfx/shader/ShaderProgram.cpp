@@ -3,8 +3,6 @@
 #include "ShaderVariable.h"
 #include <MGE/util/Exception.h>
 #include <GL/glew.h>
-#include <SDL/SDL_opengl.h>
-#include <GL/gl.h>
 #include <sstream>
 #include <iostream>
 

@@ -1,7 +1,6 @@
 #include "Texture.h"
 #include <string>
-#include <SDL/SDL_opengl.h>
-#include <GL/gl.h>
+#include <GL/glew.h>
 
 using namespace std;
 using namespace mge;

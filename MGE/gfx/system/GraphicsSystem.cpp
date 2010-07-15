@@ -2,8 +2,7 @@
 #include <MGE/util/Logger.h>
 #include <MGE/util/Exception.h>
 #include <SDL/SDL.h>
-#include <SDL/SDL_opengl.h>
-#include <GL/gl.h>
+#include <GL/glew.h>
 #include <sstream>
 
 using namespace mge;

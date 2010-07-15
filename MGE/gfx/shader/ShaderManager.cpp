@@ -4,8 +4,6 @@
 #include <MGE/util/Logger.h>
 #include <boost/scoped_array.hpp>
 #include <GL/glew.h>
-#include <SDL/SDL_opengl.h>
-#include <GL/gl.h>
 #include <sstream>
 #include <memory>
 
