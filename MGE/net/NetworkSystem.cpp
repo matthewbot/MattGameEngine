@@ -60,8 +60,6 @@ shared_ptr<Connection> NetworkSystem::acceptConnection() {
 	return conn;
 }
 
-#include <iostream>
-
 shared_ptr<Connection> NetworkSystem::connect(const string &hostname, int port) {
 	assert(host);
 
@@ -94,7 +92,6 @@ SystemUpdateValue NetworkSystem::update() {
 				break;
 		
 			case ENET_EVENT_TYPE_CONNECT:
-				cout << "Got connection" << endl;
 				if (!conn) { // if this peer doesn't have a connection object
 					conn = new Connection(event.peer, Connection::ESTABLISHING);
 					event.peer->data = conn;
@@ -112,10 +109,12 @@ SystemUpdateValue NetworkSystem::update() {
 				break;
 					
 			case ENET_EVENT_TYPE_RECEIVE:
-				cout << "Received packet" << endl;
 				ENetPacket *packet = event.packet;
-				conn->onMessageReceived(Message(Blob((char *)packet->data, packet->dataLength), event.channelID, enetToType(packet->flags)));
+				Blob data((char *)packet->data, packet->dataLength);
+				Message msg(data, event.channelID, enetToType(packet->flags));
 				enet_packet_destroy(packet);
+				
+				conn->onMessageReceived(msg);
 				break;
 		}
 	}
@@ -127,3 +126,4 @@ SystemUpdateValue NetworkSystem::update() {
 }
 
 const char *NetworkSystem::getName() const { return "NetworkSystem"; }
+

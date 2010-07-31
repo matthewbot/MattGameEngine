@@ -3,8 +3,6 @@
 #include <enet/enet.h>
 #include <cassert>
 
-#include <iostream>
-
 using namespace mge;
 using namespace std;
 
@@ -33,8 +31,6 @@ Message Connection::getMessage() {
 }
 
 void Connection::sendMessage(const Message &msg) {
-	cout << "sent message" << endl;
-
 	assert(state == CONNECTED);
 	const Blob &data = msg.getData();
 	ENetPacket *packet = enet_packet_create(data.get(), data.getRemaining(), typeToEnet(msg.getType()));
