@@ -16,7 +16,9 @@ namespace mge {
 			~Connection(); // must dealloc peer
 
 			enum State { ESTABLISHING, CONNECTED, DISCONNECTING, DISCONNECTED, TIMEOUT };
-			inline State getState() { return state; }
+			inline State getState() const { return state; }
+			int getPing() const;
+			std::string getIP() const;
 
 			bool messageAvailable() const;
 			Message getMessage();

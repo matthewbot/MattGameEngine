@@ -15,6 +15,13 @@ Connection::~Connection() {
 		reset();
 }
 
+int Connection::getPing() const { return peer->roundTripTime; }
+string Connection::getIP() const {
+	char buf[20];
+	enet_address_get_host_ip(&peer->address, buf, sizeof(buf));
+	return buf;
+}
+
 bool Connection::messageAvailable() const {
 	return messagebuf.size() > 0;
 }
